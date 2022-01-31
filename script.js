@@ -19,9 +19,21 @@ function computerSelection() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log("It's a tie");    
+        return "It's a tie"    
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        return "You win!"
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        return "You lose!"
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        return "You win!"
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return "You lose!"
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        return "You win!"
+    } else if (playerSelection === "paper" && computerSelection === "scissors"){
+        return "You lose!"
     } else {
-        console.log("why no tie??");
+        return "Please enter rock, paper, or scissors"
     }
 }
 
@@ -31,9 +43,14 @@ function game() {
     //generate computer selection
     let computerGameChoice = computerSelection();
     //round logic
-    playRound(playerGameChoice, computerGameChoice);
+    console.log(playRound(playerGameChoice, computerGameChoice));
+    
 }
 
 
 //Execute game
+game();
+game();
+game();
+game();
 game();
